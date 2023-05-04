@@ -3,3 +3,9 @@
   padding: 0;
   margin: 0;
 }
+body
+{
+  backround-image: url(Background.jpg)
+    background-size: cover;
+  background-position: center;
+}
