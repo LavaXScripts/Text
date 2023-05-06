@@ -3,6 +3,14 @@
   padding: 0;
   margin: 0;
 }
+body
+{
+background-image: url(background.jpg);
+background-size: cover;
+background-position: center;
+box-sizing: border-box;
+font-family: sans-serif;
+}
 .menu-bar
 {
   background: rbg(0,100,0);
