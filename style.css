@@ -16,3 +16,9 @@ font-family: sans-serif;
   background: rbg(0,100,0);
   text-align: center;
 }
+.menu-bar ul
+{
+display: inline-flex
+list-style: none;
+color: #fff;
+}
