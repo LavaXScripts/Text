@@ -3,9 +3,8 @@
   padding: 0;
   margin: 0;
 }
-body
+.menu-bar
 {
-  backround-image: url(Background.jpg.png);
-    background-size: cover;
-  background-position: center;
+  background: rbg(0,100,0);
+  text-align: center;
 }
