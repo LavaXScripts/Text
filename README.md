@@ -1,1 +1,1 @@
-![Alt Text](/path/to/image.png)
+![Alt Text](/path/to/Background.jpg.png)
