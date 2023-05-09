@@ -3,6 +3,34 @@
 <head>
 	<title>Features</title>
 	<style>
+		/* Style for the top bar */
+      .top-bar {
+        background-color: #333; /* Set the background color */
+        color: #fff; /* Set the text color */
+        height: 50px; /* Set the height */
+        padding: 10px; /* Add some padding */
+        display: flex; /* Use flexbox */
+        justify-content: space-between; /* Align items at the ends */
+      }
+      
+      /* Style for the buttons */
+      .top-bar button {
+        background-color: #555; /* Set the background color */
+        color: #fff; /* Set the text color */
+        border: none; /* Remove the border */
+        padding: 10px; /* Add some padding */
+        margin-left: 10px; /* Add some margin to the left */
+        border-radius: 5px; /* Add some rounded corners */
+        cursor: pointer; /* Add a pointer cursor */
+      }
+      
+      /* Style for the active button */
+      .top-bar button.active {
+        background-color: #fff; /* Set the background color */
+        color: #333; /* Set the text color */
+      }
+    </style>
+	<style>
 		ol {
 			list-style-type: decimal; /* set the bullet point style to "decimal" */
 			list-style-position: inside; /* move the bullet points inside the list item */
