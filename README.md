@@ -1,1 +1,1 @@
-![Alt Text](/path/to/Background.jpg.png)
+![My Logo](/path/to/Background.jpg.png)
