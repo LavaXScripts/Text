@@ -1,37 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Website</title>
-	<style>
-		.button-bar {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: #f2f2f2;
-			padding: 10px;
-		}
-
-		.button-bar button {
-			background-color: #4CAF50;
-			color: white;
-			border: none;
-			padding: 10px 20px;
-			margin: 5px;
-			cursor: pointer;
-			border-radius: 5px;
-		}
-
-		.button-bar button:hover {
-			background-color: #3e8e41;
-		}
-	</style>
+	<title>Online Business - Your One-Stop Shop for Everything You Need</title>
+	<meta name="description" content="Welcome to our online business! We have everything you need from electronics to home goods.">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="button-bar">
-		<button>Button 1</button>
-		<button>Button 2</button>
-		<button>Button 3</button>
-		<button>Button 4</button>
-	</div>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#services">Our Services</a></li>
+				<li><a href="#products">Our Products</a></li>
+				<li><a href="#contact">Contact Us</a></li>
+			</ul>
+		</nav>
+		<h1>Online Business</h1>
+	</header>
+	<main>
+		<section id="about">
+			<h2>About Us</h2>
+			<p>We are a family-owned online business that has been serving customers for over 10 years. Our mission is to provide high-quality products at affordable prices.</p>
+		</section>
+		<section id="services">
+			<h2>Our Services</h2>
+			<ul>
+				<li>Fast and free shipping</li>
+				<li>Easy returns</li>
+				<li>24/7 customer support</li>
+			</ul>
+		</section>
+		<section id="products">
+			<h2>Our Products</h2>
+			<ul>
+				<li>
+					<img src="product1.jpg" alt="Product 1">
+					<h3>Product 1</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at massa eget turpis malesuada sagittis eget sed velit.</p>
+					<button>Add to Cart</button>
+				</li>
+				<li>
+					<img src="product2.jpg" alt="Product 2">
+					<h3>Product 2</h3>
+					<p>Proin eget est mauris. Vivamus dignissim, felis quis dapibus consequat, neque orci suscipit nibh, sit amet semper dolor justo ut libero.</p>
+					<button>Add to Cart</button>
+				</li>
+				<li>
+					<img src="product3.jpg" alt="Product 3">
+					<h3>Product 3</h3>
+					<p>Nam laoreet tristique justo, vel scelerisque urna. Nullam eu tortor eget leo dapibus lacinia ac eu odio.</p>
+					<button>Add to Cart</button>
+				</li>
+			</ul>
+		</section>
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<form method="post">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" required></textarea>
+
+				<input type="submit" value="Send Message">
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 Online Business. All rights reserved.</p>
+	</footer>
 </body>
 </html>
