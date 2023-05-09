@@ -3,39 +3,35 @@
 <head>
 	<title>My Website</title>
 	<style>
-		.dropdown {
-			position: relative;
-			display: inline-block;
+		.button-bar {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #f2f2f2;
+			padding: 10px;
 		}
 
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			z-index: 1;
+		.button-bar button {
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			margin: 5px;
+			cursor: pointer;
+			border-radius: 5px;
 		}
 
-		.dropdown:hover .dropdown-content {
-			display: block;
+		.button-bar button:hover {
+			background-color: #3e8e41;
 		}
 	</style>
 </head>
 <body>
-	<header>
-		<nav>
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li class="dropdown">
-					<a href="#services">Services</a>
-					<div class="dropdown-content">
-						<a href="#service1">Service 1</a>
-						<a href="#service2">Service 2</a>
-						<a href="#service3">Service 3</a>
-					</div>
-				</li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
+	<div class="button-bar">
+		<button>Button 1</button>
+		<button>Button 2</button>
+		<button>Button 3</button>
+		<button>Button 4</button>
+	</div>
 </body>
 </html>
