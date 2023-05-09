@@ -53,7 +53,12 @@
       <div class="custom-font">V1.0 Beta</div> <!-- Add your logo here -->
       <div>
         <button class="active">Home</button>
-	      <button href="https://www.example.com">Script</button>
+	      <button id="mybutton">Script</button>
+	      <script>
+		document.getElementById("myButton").addEventListener("click", function() {
+			window.location.href = "https://www.example.com";
+		});
+	</script>
         <button>Discord</button>
         <button>Youtube</button>
 	      <button>LavaX Lite</button>
