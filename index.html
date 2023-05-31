@@ -6,10 +6,21 @@
   
   <style>
     body {
-      background-color: black;
-      background-image: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00, #ff6600, #ff0000);
-      background-size: 400% 400%;
-      animation: flamesAnimation 5s infinite;
+      background: linear-gradient(45deg, #000000, #6e0100, #ff0000, #6e0100, #000000);
+      background-size: 600% 600%;
+      animation: lavaAnimation 8s infinite;
+    }
+    
+    @keyframes lavaAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
     
     .ultimate {
@@ -22,17 +33,18 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-family: 'Montserrat', sans-serif;
+      animation: flamesAnimation 1.5s infinite;
     }
     
     @keyframes flamesAnimation {
       0% {
-        background-position: 0% 50%;
+        background-position: 0% 0%;
       }
       50% {
-        background-position: 100% 50%;
+        background-position: 100% 100%;
       }
       100% {
-        background-position: 0% 50%;
+        background-position: 0% 0%;
       }
     }
   </style>
