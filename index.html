@@ -6,21 +6,8 @@
   
   <style>
     body {
-      background: linear-gradient(45deg, #000000, #6e0100, #ff0000, #6e0100, #000000);
-      background-size: 600% 600%;
-      animation: lavaAnimation 8s infinite;
-    }
-    
-    @keyframes lavaAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      background-image: url('path/to/flames.gif');
+      background-size: cover;
     }
     
     .ultimate {
@@ -30,22 +17,20 @@
     }
     
     .flames {
-      background: linear-gradient(to right, silver 50%, red 50%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       font-family: 'Poppins', sans-serif;
+      font-size: 72px;
       animation: flamesAnimation 1.5s infinite;
     }
     
     @keyframes flamesAnimation {
       0% {
-        background-position: 0% 0%;
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red;
       }
       50% {
-        background-position: 100% 100%;
+        text-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red, 0 0 80px red, 0 0 100px red, 0 0 120px red;
       }
       100% {
-        background-position: 0% 0%;
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red;
       }
     }
   </style>
