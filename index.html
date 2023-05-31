@@ -3,11 +3,17 @@
 <head>
   <title>Ultimate X</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  
   <style>
     body {
-      background-image: url('https://images.unsplash.com/photo-1635194983462-4975a0abeaa7?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=elisabeth-arnold-qnVk55dxebg-unsplash.jpg');
-      background-size: cover;
+      background: black;
+      overflow: hidden;
+    }
+    
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
     
     .ultimate {
@@ -19,18 +25,18 @@
     .flames {
       font-family: 'Poppins', sans-serif;
       font-size: 72px;
-      animation: flamesAnimation 1.5s infinite;
+      animation: flamesAnimation 1.5s ease-in-out infinite;
     }
     
     @keyframes flamesAnimation {
       0% {
-        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.7);
       }
       50% {
-        text-shadow: 0 0 20px red, 0 0 40px red, 0 0 60px red, 0 0 80px red, 0 0 100px red, 0 0 120px red;
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.7), 0 0 60px rgba(255, 0, 0, 0.7), 0 0 80px rgba(255, 0, 0, 0.7);
       }
       100% {
-        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.7);
       }
     }
   </style>
@@ -40,5 +46,53 @@
     <span class="ultimate">Ultimate</span>
     <span class="flames">X</span>
   </h1>
+  <canvas id="flamesCanvas"></canvas>
+
+  <script>
+    // Create the flames animation
+    const canvas = document.getElementById('flamesCanvas');
+    const ctx = canvas.getContext('2d');
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const flames = [];
+
+    function createFlame() {
+      const x = Math.random() * width;
+      const y = height;
+      const size = Math.random() * 80 + 40;
+      const speedY = Math.random() * 2 + 1;
+      const opacity = Math.random() * 0.5 + 0.5;
+
+      flames.push({ x, y, size, speedY, opacity });
+    }
+
+    function drawFlames() {
+      ctx.clearRect(0, 0, width, height);
+
+      flames.forEach((flame, index) => {
+        ctx.beginPath();
+        ctx.moveTo(flame.x, flame.y);
+        ctx.lineTo(flame.x + flame.size, flame.y);
+        ctx.lineTo(flame.x + flame.size / 2, flame.y - flame.size);
+        ctx.closePath();
+        ctx.fillStyle = `rgba(255, 0, 0, ${flame.opacity})`;
+        ctx.fill();
+
+        flame.y -= flame.speedY;
+
+        if (flame.y + flame.size < 0) {
+          flames.splice(index, 1);
+        }
+      });
+
+      requestAnimationFrame(drawFlames);
+    }
+
+    setInterval(createFlame, 200);
+    drawFlames();
+  </script>
 </body>
 </html>
