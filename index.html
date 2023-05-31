@@ -6,35 +6,8 @@
   
   <style>
     body {
-      background: linear-gradient(45deg, #000000, #6e0100, #ff0000, #6e0100, #000000);
-      background-size: 600% 600%;
-      animation: lavaAnimation 8s infinite;
-    }
-    
-    @keyframes lavaAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-    
-    .ultimate {
-      color: red;
-      font-family: 'Poppins', sans-serif;
-      font-size: 48px;
-    }
-    
-    .flames {
-      background: linear-gradient(to right, silver 50%, red 50%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: 'Poppins', sans-serif;
-      animation: flamesAnimation 1.5s infinite;
+      background: url('https://your-flame-image-url') repeat;
+      animation: flamesAnimation 8s infinite;
     }
     
     @keyframes flamesAnimation {
@@ -47,6 +20,20 @@
       100% {
         background-position: 0% 0%;
       }
+    }
+    
+    .ultimate {
+      color: red;
+      font-family: 'Poppins', sans-serif;
+      font-size: 48px;
+    }
+    
+    .flames {
+      background: url('https://images.unsplash.com/photo-1517594422361-5eeb8ae275a9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=cullan-smith-BdTtvBRhOng-unsplash.jpg') repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Poppins', sans-serif;
+      animation: flamesAnimation 1.5s infinite;
     }
   </style>
 </head>
