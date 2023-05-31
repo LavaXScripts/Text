@@ -2,11 +2,9 @@
 <html>
 <head>
   <title>Ultimate X</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fury&display=swap');
-    
     body {
       background: linear-gradient(45deg, #000000, #6e0100, #ff0000, #6e0100, #000000);
       background-size: 600% 600%;
@@ -27,32 +25,15 @@
     
     .ultimate {
       color: red;
-      font-family: 'Fury', sans-serif;
+      font-family: 'Poppins', sans-serif;
       font-size: 48px;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .ultimate::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, #ff0000 20%, transparent 25%), radial-gradient(circle, #ff0000 20%, transparent 25%);
-      background-position: 0 0, 50% 50%;
-      background-repeat: repeat;
-      background-size: 50px 50px, 100px 100px;
-      animation: ringAnimation 2s infinite linear;
-      top: -10px;
-      left: -10px;
-      z-index: -1;
     }
     
     .flames {
       background: linear-gradient(to right, silver 50%, red 50%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
       animation: flamesAnimation 1.5s infinite;
     }
     
@@ -65,15 +46,6 @@
       }
       100% {
         background-position: 0% 0%;
-      }
-    }
-    
-    @keyframes ringAnimation {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
       }
     }
   </style>
