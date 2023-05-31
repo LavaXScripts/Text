@@ -25,27 +25,50 @@
     .flames {
       font-family: 'Poppins', sans-serif;
       font-size: 72px;
-      text-shadow: 0 0 10px black;
       animation: blocksAnimation 4s linear infinite;
     }
     
     @keyframes blocksAnimation {
       0% {
-        text-shadow: 0 0 10px black;
+        transform: translateY(0);
       }
       50% {
-        text-shadow: 10px 10px 10px black;
+        transform: translateY(50px);
       }
       100% {
-        text-shadow: 0 0 10px black;
+        transform: translateY(0);
       }
+    }
+    
+    .introducing {
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    .ultimate-x {
+      color: red;
+      font-family: 'Poppins', sans-serif;
+      font-size: 72px;
+      text-align: center;
+    }
+    
+    .half-silver {
+      background: linear-gradient(to right, silver 50%, red 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
 <body>
-  <h1>
-    <span class="ultimate">Ultimate</span>
-    <span class="flames">X</span>
+  <h1 class="introducing">
+    Introducing
+    <br>
+    <span class="ultimate-x">
+      <span class="half-silver">Ultimate</span> X
+    </span>
   </h1>
   <canvas id="flamesCanvas"></canvas>
 
@@ -70,10 +93,7 @@
       blocks.forEach((block, index) => {
         ctx.fillStyle = 'red';
         ctx.lineJoin = 'round';
-        ctx.lineWidth = 10;
-        ctx.strokeStyle = 'black';
         ctx.fillRect(block.x, block.y, block.size, block.size);
-        ctx.strokeRect(block.x, block.y, block.size, block.size);
 
         if (block.speed > 0) {
           block.x += block.speed;
