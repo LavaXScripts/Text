@@ -25,18 +25,28 @@
     .flames {
       font-family: 'Poppins', sans-serif;
       font-size: 72px;
-      animation: flamesAnimation 1.5s ease-in-out infinite;
+      text-shadow: 0 0 10px black;
+      animation: blocksAnimation 5s linear infinite;
     }
     
-    @keyframes flamesAnimation {
+    @keyframes blocksAnimation {
       0% {
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.7);
+        text-shadow: 0 0 10px black;
       }
-      50% {
-        text-shadow: 0 0 20px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.7), 0 0 60px rgba(255, 0, 0, 0.7), 0 0 80px rgba(255, 0, 0, 0.7);
+      20% {
+        text-shadow: 10px 10px 10px black;
+      }
+      40% {
+        text-shadow: -10px -10px 10px black;
+      }
+      60% {
+        text-shadow: 10px -10px 10px black;
+      }
+      80% {
+        text-shadow: -10px 10px 10px black;
       }
       100% {
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.7);
+        text-shadow: 0 0 10px black;
       }
     }
   </style>
@@ -49,7 +59,7 @@
   <canvas id="flamesCanvas"></canvas>
 
   <script>
-    // Create the flames animation
+    // Create the blocks animation
     const canvas = document.getElementById('flamesCanvas');
     const ctx = canvas.getContext('2d');
     const width = window.innerWidth;
@@ -57,42 +67,35 @@
     canvas.width = width;
     canvas.height = height;
 
-    const flames = [];
+    const blocks = [];
 
-    function createFlame() {
+    function createBlock() {
       const x = Math.random() * width;
-      const y = height;
-      const size = Math.random() * 80 + 40;
-      const speedY = Math.random() * 2 + 1;
-      const opacity = Math.random() * 0.5 + 0.5;
+      const y = Math.random() * height;
+      const size = Math.random() * 20 + 10;
 
-      flames.push({ x, y, size, speedY, opacity });
+      blocks.push({ x, y, size });
     }
 
-    function drawFlames() {
+    function drawBlocks() {
       ctx.clearRect(0, 0, width, height);
 
-      flames.forEach((flame, index) => {
-        ctx.beginPath();
-        ctx.moveTo(flame.x, flame.y);
-        ctx.lineTo(flame.x + flame.size, flame.y);
-        ctx.lineTo(flame.x + flame.size / 2, flame.y - flame.size);
-        ctx.closePath();
-        ctx.fillStyle = `rgba(255, 0, 0, ${flame.opacity})`;
-        ctx.fill();
+      blocks.forEach((block, index) => {
+        ctx.fillStyle = 'red';
+        ctx.fillRect(block.x, block.y, block.size, block.size);
 
-        flame.y -= flame.speedY;
+        block.x += 0.2; // Adjust the speed of the blocks horizontally
 
-        if (flame.y + flame.size < 0) {
-          flames.splice(index, 1);
+        if (block.x > width) {
+          blocks.splice(index, 1);
         }
       });
 
-      requestAnimationFrame(drawFlames);
+      requestAnimationFrame(drawBlocks);
     }
 
-    setInterval(createFlame, 200);
-    drawFlames();
+    setInterval(createBlock, 200);
+    drawBlocks();
   </script>
 </body>
 </html>
