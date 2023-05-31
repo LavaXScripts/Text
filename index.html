@@ -16,32 +16,8 @@
       z-index: -1;
     }
     
-    .ultimate {
-      color: red;
-      font-family: 'Poppins', sans-serif;
-      font-size: 48px;
-    }
-    
-    .flames {
-      font-family: 'Poppins', sans-serif;
-      font-size: 72px;
-      animation: blocksAnimation 4s linear infinite;
-    }
-    
-    @keyframes blocksAnimation {
-      0% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(50px);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-    
     .introducing {
-      color: white;
+      color: #999999;
       font-family: 'Poppins', sans-serif;
       font-size: 24px;
       text-align: center;
@@ -60,9 +36,24 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    
+    .flames {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.5;
+      mix-blend-mode: multiply;
+    }
   </style>
 </head>
 <body>
+  <div class="flames">
+    <canvas id="flamesCanvas"></canvas>
+  </div>
+  
   <h1 class="introducing">
     Introducing
     <br>
@@ -70,7 +61,6 @@
       <span class="half-silver">Ultimate</span> X
     </span>
   </h1>
-  <canvas id="flamesCanvas"></canvas>
 
   <script>
     // Create the blocks animation
@@ -91,7 +81,7 @@
       ctx.clearRect(0, 0, width, height);
 
       blocks.forEach((block, index) => {
-        ctx.fillStyle = 'red';
+        ctx.fillStyle = 'rgba(100, 0, 0, 0.8)';
         ctx.lineJoin = 'round';
         ctx.fillRect(block.x, block.y, block.size, block.size);
 
