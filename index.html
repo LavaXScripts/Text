@@ -1,64 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Matrix Digital Rain</title>
+  <title>Ultimate X</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
+    .ultimate {
+      color: red;
     }
     
-    #matrix {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      font-family: 'Consolas', monospace;
-      font-size: 16px;
-      line-height: 1em;
-      color: #0F0;
+    .flames {
+      background: linear-gradient(to right, silver 50%, red 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   </style>
 </head>
 <body>
-  <div id="matrix"></div>
-
-  <script>
-    // Create the matrix digital rain effect
-    var matrix = document.getElementById('matrix');
-    var matrixText = '';
-
-    // Generate the matrix characters
-    var matrixChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-
-    // Set the number of columns and rows
-    var matrixColumns = 80;
-    var matrixRows = 40;
-
-    // Create the initial matrix text
-    for (var i = 0; i < matrixColumns * matrixRows; i++) {
-      matrixText += matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
-    }
-
-    // Set the initial content of the matrix
-    matrix.innerText = matrixText;
-
-    // Animation function
-    function animateMatrix() {
-      // Update the matrix text
-      matrixText = matrixText.substr(matrixColumns) + matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
-
-      // Update the content of the matrix
-      matrix.innerText = matrixText;
-
-      // Call the animation function again after a short delay
-      setTimeout(animateMatrix, 50);
-    }
-
-    // Start the animation
-    animateMatrix();
-  </script>
+  <h1>
+    <span class="ultimate">Ultimate</span>
+    <span class="flames">X</span>
+  </h1>
 </body>
 </html>
