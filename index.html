@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Ultimate X</title>
@@ -33,7 +33,7 @@
       font-size: 64px;
       display: inline-block;
       line-height: 1;
-      animation: rotateAnimation 3s infinite linear;
+      animation: rotateAnimation 5s linear;
     }
     
     @keyframes rotateAnimation {
@@ -87,9 +87,27 @@
           loadingText.style.display = "none";
           var introducingText = document.getElementById("introducing-text");
           introducingText.classList.add("fade-in");
+
+          // Fetch and load additional content from a URL
+          fetchContent("https://lavaxscripts.github.io/Text/Home.html")
+            .then(content => {
+              var contentContainer = document.getElementById("content-container");
+              contentContainer.innerHTML = content;
+            })
+            .catch(error => {
+              console.error("Error fetching content:", error);
+            });
         }, 2000);
       }, 5000);
     });
+
+    function fetchContent(url) {
+      return fetch(url)
+        .then(response => response.text())
+        .catch(error => {
+          console.error("Error fetching content:", error);
+        });
+    }
   </script>
 </head>
 <body>
@@ -98,5 +116,7 @@
     <p id="loading-text" class="loading">Loading...</p>
     <p id="introducing-text" class="introducing">Introducing</p>
   </div>
+
+  <div id="content-container"></div>
 </body>
 </html>
