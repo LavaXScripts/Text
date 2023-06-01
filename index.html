@@ -81,9 +81,8 @@
       ctx.clearRect(0, 0, width, height);
 
       blocks.forEach((block, index) => {
-        ctx.fillStyle = 'rgba(100, 0, 0, 0.8)';
-        ctx.lineJoin = 'round';
-        ctx.fillRect(block.x, block.y, block.size, block.size);
+        ctx.fillStyle = 'rgba(139, 0, 0, 0.8)';
+        ctx.roundRect(block.x, block.y, block.size, block.size, 20);
 
         if (block.speed > 0) {
           block.x += block.speed;
@@ -112,6 +111,24 @@
     createBlock(0, 0, bigBlockSize, -bigBlockSpeed); // Big block at top-left corner
     createBlock(width - regularBlockSize, height - regularBlockSize, regularBlockSize, regularBlockSpeed); // Regular block at bottom-right corner
     createBlock(0, height - regularBlockSize, regularBlockSize, -regularBlockSpeed); // Regular block at bottom-left corner
+
+    // Round rect function
+    CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, radius) {
+      const r = x + w;
+      const b = y + h;
+      this.beginPath();
+      this.moveTo(x + radius, y);
+      this.lineTo(r - radius, y);
+      this.quadraticCurveTo(r, y, r, y + radius);
+      this.lineTo(r, y + h - radius);
+      this.quadraticCurveTo(r, b, r - radius, b);
+      this.lineTo(x + radius, b);
+      this.quadraticCurveTo(x, b, x, b - radius);
+      this.lineTo(x, y + radius);
+      this.quadraticCurveTo(x, y, x + radius, y);
+      this.closePath();
+      this.fill();
+    };
 
     drawBlocks();
   </script>
