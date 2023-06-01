@@ -78,9 +78,9 @@
         var introducingText = document.getElementById("introducing-text");
         var ultimateX = document.getElementById("ultimate-x");
         
+        ultimateX.classList.remove("flames");
         loadingText.classList.add("fade-out");
         introducingText.classList.add("fade-in");
-        ultimateX.classList.remove("rotate");
         
         setTimeout(function() {
           loadingText.style.display = "none";
@@ -92,7 +92,7 @@
 <body>
   <div class="ultimate-x" id="ultimate-x">
     <h1 class="ultimate">Ultimate <span class="flames">X</span></h1>
-    <p id="loading-text" class="loading">Loading...</p>
+    <p id="loading-text" class="loading">Page has loaded</p>
     <p id="introducing-text" class="introducing">Introducing</p>
   </div>
 </body>
