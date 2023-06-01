@@ -78,22 +78,23 @@
       position: absolute;
       top: 0;
       left: 0;
-      transition: width 2s linear;
+      transition: width 5s linear;
     }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var ultimateX = document.getElementById("ultimate-x");
       var loadingProgress = document.getElementById("loading-progress");
+      var loadingText = document.getElementById("loading-text");
+
+      ultimateX.classList.remove("flames");
 
       setTimeout(function() {
-        ultimateX.classList.remove("flames");
-        var loadingText = document.getElementById("loading-text");
         loadingText.classList.add("fade-out");
-        
+        loadingProgress.style.width = "100%";
+
         setTimeout(function() {
           loadingText.style.display = "none";
-          loadingProgress.style.width = "100%";
 
           // Redirect to another website
           setTimeout(function() {
