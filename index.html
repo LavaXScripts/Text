@@ -61,6 +61,10 @@
       margin-top: -20px;
       opacity: 0;
       transition: opacity 0.5s;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
     
     .fade-out {
@@ -80,10 +84,10 @@
         
         ultimateX.classList.remove("flames");
         loadingText.classList.add("fade-out");
-        introducingText.classList.add("fade-in");
         
         setTimeout(function() {
           loadingText.style.display = "none";
+          introducingText.classList.add("fade-in");
         }, 2000);
       }, 5000);
     });
