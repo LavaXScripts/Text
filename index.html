@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Ultimate X</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
     body {
@@ -15,15 +15,15 @@
 
     .ultimate {
       color: red;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 48px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 64px;
     }
     
     .flames {
       background: linear-gradient(to right, silver 50%, red 50%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
       animation: flamesAnimation 1.5s infinite;
     }
     
@@ -38,12 +38,34 @@
         background-position: 0% 0%;
       }
     }
+    
+    .introducing {
+      color: #999999;
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      text-align: center;
+    }
+    
+    .rotating-x {
+      display: inline-block;
+      animation: rotateAnimation 4s infinite linear;
+    }
+    
+    @keyframes rotateAnimation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="introducing">Introducing</div>
   <h1>
     <span class="ultimate">Ultimate</span>
-    <span class="flames">X</span>
+    <span class="flames rotating-x">X</span>
   </h1>
 </body>
 </html>
