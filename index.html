@@ -13,17 +13,24 @@
       background: black;
     }
 
+    .ultimate-x {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+    }
+    
     .ultimate {
       color: red;
-      font-family: 'Poppins', sans-serif;
       font-size: 64px;
+      margin-bottom: 0;
     }
     
     .flames {
       background: linear-gradient(to right, silver 50%, red 50%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-family: 'Poppins', sans-serif;
+      font-size: 64px;
+      display: inline-block;
+      line-height: 1;
       animation: flamesAnimation 1.5s infinite;
     }
     
@@ -44,30 +51,15 @@
       font-family: 'Poppins', sans-serif;
       font-size: 24px;
       text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    .rotating-x {
-      display: inline-block;
-      animation: rotateAnimation 4s infinite linear;
-    }
-    
-    @keyframes rotateAnimation {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
-  <div class="introducing">Introducing</div>
-  <h1>
-    <span class="ultimate">Ultimate</span>
-    <br>
-    <span class="flames rotating-x">X</span>
-  </h1>
+  <div class="ultimate-x">
+    <h1 class="ultimate">Ultimate</h1>
+    <h1 class="flames">X</h1>
+    <p class="introducing">Introducing</p>
+  </div>
 </body>
 </html>
