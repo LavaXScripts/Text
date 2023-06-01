@@ -5,14 +5,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   
   <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+    }
+
     .ultimate {
       color: red;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 48px;
     }
     
     .flames {
       background: linear-gradient(to right, silver 50%, red 50%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-family: 'Montserrat', sans-serif;
+      animation: flamesAnimation 1.5s infinite;
+    }
+    
+    @keyframes flamesAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
     }
   </style>
 </head>
