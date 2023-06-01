@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ultimate X</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: black;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
+    .ultimate-x {
+      text-align: center;
+    }
+    
+    .ultimate {
+      color: red;
+      font-size: 64px;
+      margin-bottom: 0;
+    }
+    
+    .flames {
+      background: linear-gradient(to right, silver 50%, red 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 64px;
+      display: inline-block;
+      line-height: 1;
+      animation: rotateAnimation 5s linear;
+    }
+    
+    @keyframes rotateAnimation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .introducing {
+      color: #999999;
+      font-size: 24px;
+      margin-top: -20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ultimate-x">
+    <p class="introducing">Introducing</p>
+    <h1 class="ultimate">Ultimate <span class="flames">X</span></h1>
+  </div>
+</body>
+</html>
