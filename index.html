@@ -7,130 +7,32 @@
     body {
       background: black;
       overflow: hidden;
-    }
-    
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    
-    .introducing {
-      color: #999999;
-      font-family: 'Poppins', sans-serif;
-      font-size: 24px;
-      text-align: center;
-      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
     
     .ultimate-x {
       color: red;
       font-family: 'Poppins', sans-serif;
       font-size: 72px;
-      text-align: center;
+      position: relative;
     }
     
     .half-silver-red {
+      position: absolute;
+      top: 0;
+      left: 0;
       background: linear-gradient(to right, silver 50%, red 50%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
-    .flames {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.5;
-      mix-blend-mode: multiply;
-    }
   </style>
 </head>
 <body>
-  <div class="flames">
-    <canvas id="flamesCanvas"></canvas>
-  </div>
-  
-  <h1 class="introducing">
-    Introducing
-    <br>
-    <span class="ultimate-x">
-      <span class="half-silver-red">Ultimate</span> X
-    </span>
+  <h1 class="ultimate-x">
+    Ultimate <span class="half-silver-red">X</span>
   </h1>
-
-  <script>
-    // Create the blocks animation
-    const canvas = document.getElementById('flamesCanvas');
-    const ctx = canvas.getContext('2d');
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-
-    const blocks = [];
-
-    function createBlock(x, y, size, speed) {
-      blocks.push({ x, y, size, speed });
-    }
-
-    function drawBlocks() {
-      ctx.clearRect(0, 0, width, height);
-
-      blocks.forEach((block, index) => {
-        ctx.fillStyle = 'rgba(139, 0, 0, 0.8)';
-        ctx.roundRect(block.x, block.y, block.size, block.size, 20);
-
-        if (block.speed > 0) {
-          block.x += block.speed;
-          if (block.x > width) {
-            block.x = -block.size;
-          }
-        } else {
-          block.x -= Math.abs(block.speed);
-          if (block.x < -block.size) {
-            block.x = width;
-          }
-        }
-      });
-
-      requestAnimationFrame(drawBlocks);
-    }
-
-    // Define block parameters
-    const bigBlockSize = 250;
-    const regularBlockSize = 150;
-    const bigBlockSpeed = 2;
-    const regularBlockSpeed = -2;
-
-    // Create blocks
-    createBlock(width - bigBlockSize, 0, bigBlockSize, bigBlockSpeed); // Big block at top-right corner
-    createBlock(0, 0, bigBlockSize, -bigBlockSpeed); // Big block at top-left corner
-    createBlock(width - regularBlockSize, height - regularBlockSize, regularBlockSize, regularBlockSpeed); // Regular block at bottom-right corner
-    createBlock(0, height - regularBlockSize, regularBlockSize, -regularBlockSpeed); // Regular block at bottom-left corner
-
-    // Round rect function
-    CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, radius) {
-      const r = x + w;
-      const b = y + h;
-      this.beginPath();
-      this.moveTo(x + radius, y);
-      this.lineTo(r - radius, y);
-      this.quadraticCurveTo(r, y, r, y + radius);
-      this.lineTo(r, y + h - radius);
-      this.quadraticCurveTo(r, b, r - radius, b);
-      this.lineTo(x + radius, b);
-      this.quadraticCurveTo(x, b, x, b - radius);
-      this.lineTo(x, y + radius);
-      this.quadraticCurveTo(x, y, x + radius, y);
-      this.closePath();
-      this.fill();
-    };
-
-    drawBlocks();
-  </script>
 </body>
 </html>
