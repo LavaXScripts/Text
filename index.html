@@ -61,10 +61,30 @@
     .fade-in {
       opacity: 1;
     }
+
+    .loading-bar {
+      width: 200px;
+      height: 10px;
+      background-color: #999999;
+      margin-top: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loading-progress {
+      width: 0;
+      height: 100%;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: width 2s linear;
+    }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var ultimateX = document.getElementById("ultimate-x");
+      var loadingProgress = document.getElementById("loading-progress");
 
       setTimeout(function() {
         ultimateX.classList.remove("flames");
@@ -73,9 +93,12 @@
         
         setTimeout(function() {
           loadingText.style.display = "none";
+          loadingProgress.style.width = "100%";
 
           // Redirect to another website
-          window.location.href = "https://lavaxscripts.github.io/Text/Home.html";
+          setTimeout(function() {
+            window.location.href = "https://lavaxscripts.github.io/Text/Home.html";
+          }, 2000);
         }, 2000);
       }, 5000);
     });
@@ -85,6 +108,9 @@
   <div class="ultimate-x" id="ultimate-x">
     <h1 class="ultimate">Ultimate <span class="flames">X</span></h1>
     <p id="loading-text" class="loading">Loading...</p>
+    <div class="loading-bar">
+      <div id="loading-progress" class="loading-progress"></div>
+    </div>
   </div>
 </body>
 </html>
