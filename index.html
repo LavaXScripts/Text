@@ -2,91 +2,24 @@
 <html>
 <head>
   <title>Ultimate X</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  
   <style>
-    body {
-      background: black;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    
-    .introducing {
-      color: #999999;
-      font-family: 'Poppins', sans-serif;
-      font-size: 24px;
-      text-align: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    
-    .ultimate-x {
+    .ultimate {
       color: red;
-      font-family: 'Poppins', sans-serif;
-      font-size: 72px;
-      position: relative;
     }
     
-    .half-silver-red {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .flames {
       background: linear-gradient(to right, silver 50%, red 50%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
-    .rotating-x {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    
-    .rotating-x:before,
-    .rotating-x:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 400px;
-      height: 10px;
-      background-color: red;
-    }
-    
-    .rotating-x:before {
-      transform-origin: left center;
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-    
-    .rotating-x:after {
-      transform-origin: right center;
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-    
-    @keyframes rotate {
-      0% {
-        transform: rotate(0);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="introducing">Introducing</div>
-  <div class="ultimate-x">
-    Ultimate <span class="half-silver-red">X</span>
-  </div>
-  <div class="rotating-x"></div>
+  <h1>
+    <span class="ultimate">Ultimate</span>
+    <span class="flames">X</span>
+  </h1>
 </body>
 </html>
