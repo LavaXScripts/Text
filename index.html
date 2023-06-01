@@ -9,7 +9,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 200vh; /* Increased height for scrolling effect */
+      height: 100vh;
       background: black;
     }
 
@@ -74,27 +74,10 @@
     .fade-in {
       opacity: 1;
     }
-    
-    .content {
-      margin-top: 200px; /* Adjust the margin as per your needs */
-      padding: 20px;
-      color: white;
-    }
-    
-    .red-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 60px;
-      background: red;
-      display: none; /* Initially hidden */
-    }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var ultimateX = document.getElementById("ultimate-x");
-      var redBar = document.getElementById("red-bar");
 
       setTimeout(function() {
         ultimateX.classList.remove("flames");
@@ -105,7 +88,9 @@
           loadingText.style.display = "none";
           var introducingText = document.getElementById("introducing-text");
           introducingText.classList.add("fade-in");
-          redBar.style.display = "block"; // Show the red bar after loading
+
+          // Redirect to another website
+          window.location.href = "https://lavaxscripts.github.io/Text/Home.html";
         }, 2000);
       }, 5000);
     });
@@ -116,14 +101,6 @@
     <h1 class="ultimate">Ultimate <span class="flames">X</span></h1>
     <p id="loading-text" class="loading">Loading...</p>
     <p id="introducing-text" class="introducing">Introducing</p>
-  </div>
-
-  <div id="red-bar" class="red-bar"></div> <!-- Red bar that appears on scrolling -->
-
-  <div class="content">
-    <h2>Additional Content</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam rhoncus erat sed quam ultricies tristique. Duis sit amet enim ut mi vestibulum scelerisque at vel erat. Vivamus sed ipsum rutrum, auctor urna eu, facilisis risus. Etiam vulputate malesuada felis id iaculis. Suspendisse vel consectetur lacus. Suspendisse in ligula cursus, aliquam leo ut, consectetur ex. Fusce consequat felis vel erat volutpat, id tincidunt nunc dignissim. Vestibulum a arcu at enim pharetra elementum vitae id orci.</p>
-    <p>Quisque finibus justo id odio ultrices, at faucibus purus efficitur. Sed varius quam nec ante consectetur, eget cursus felis finibus. Mauris convallis, lorem ac tincidunt efficitur, turpis mauris malesuada elit, sit amet viverra enim mi ac arcu. Donec ullamcorper, sapien at varius ullamcorper, enim nisi tempus justo, a malesuada tortor elit ut lorem. Aliquam eleifend massa nec nunc auctor sollicitudin. Sed sagittis tincidunt cursus. Ut non odio auctor, semper risus at, mattis ex. Sed id suscipit dolor, nec laoreet leo. Aliquam erat volutpat.</p>
   </div>
 </body>
 </html>
