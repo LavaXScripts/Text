@@ -45,20 +45,26 @@
       }
     }
     
-    .introducing {
+    .loading {
       color: #999999;
       font-family: 'Poppins', sans-serif;
-      font-size: 24px;
-      text-align: center;
-      margin-top: -20px;
-      margin-bottom: 10px;
+      font-size: 16px;
+      margin-top: 10px;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        var loadingText = document.getElementById("loading-text");
+        loadingText.textContent = "Page has loaded";
+      }, 5000);
+    });
+  </script>
 </head>
 <body>
   <div class="ultimate-x">
-    <p class="introducing">Introducing</p>
     <h1 class="ultimate">Ultimate <span class="flames">X</span></h1>
+    <p id="loading-text" class="loading">Loading...</p>
   </div>
 </body>
 </html>
