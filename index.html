@@ -77,16 +77,15 @@
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      var ultimateX = document.getElementById("ultimate-x");
       setTimeout(function() {
-        var loadingText = document.getElementById("loading-text");
-        var introducingText = document.getElementById("introducing-text");
-        var ultimateX = document.getElementById("ultimate-x");
-        
         ultimateX.classList.remove("flames");
+        var loadingText = document.getElementById("loading-text");
         loadingText.classList.add("fade-out");
         
         setTimeout(function() {
           loadingText.style.display = "none";
+          var introducingText = document.getElementById("introducing-text");
           introducingText.classList.add("fade-in");
         }, 2000);
       }, 5000);
