@@ -22,6 +22,8 @@
       align-items: center;
       flex-direction: column;
       height: 100%;
+      position: relative;
+      top: -50px;
     }
     
     .ultimate {
@@ -29,7 +31,7 @@
       font-size: 64px;
       margin-bottom: 0;
       opacity: 0;
-      transition: opacity 2s;
+      transition: opacity 1s;
     }
     
     .flames {
@@ -57,7 +59,7 @@
       font-size: 20px;
       cursor: pointer;
       opacity: 0;
-      transition: opacity 2s;
+      transition: opacity 1s;
     }
 
     .fade-in {
@@ -73,7 +75,7 @@
       setTimeout(function() {
         ultimateX.classList.add("fade-in");
         scriptButton.classList.add("fade-in");
-      }, 2000);
+      }, 1000);
     });
   </script>
 </head>
