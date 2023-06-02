@@ -6,18 +6,22 @@
   
   <style>
     body {
+      background-color: black;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: black;
     }
 
     .ultimate-x {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      position: relative;
-      top: -50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
     }
     
     .ultimate {
@@ -33,72 +37,31 @@
       font-size: 64px;
       display: inline-block;
       line-height: 1;
-      animation: rotateAnimation 5s linear;
     }
-    
-    @keyframes rotateAnimation {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+
+    .introducing {
+      color: grey;
+      font-size: 24px;
     }
-    
-    .loading {
-      color: #999999;
-      font-family: 'Poppins', sans-serif;
-      font-size: 16px;
-      margin-top: 10px;
-      opacity: 1;
-      transition: opacity 0.5s;
-    }
-    
-    .fade-out {
-      opacity: 0;
-    }
-    
-    .fade-in {
-      opacity: 1;
-    }
-    
-    .percentage {
-      color: red;
+
+    .script-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: linear-gradient(to right, red 50%, silver 50%);
+      border: none;
+      color: white;
       font-size: 20px;
-      margin-top: 10px;
+      cursor: pointer;
     }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var ultimateX = document.getElementById("ultimate-x");
-      var loadingText = document.getElementById("loading-text");
-      var percentage = document.getElementById("percentage");
-      var currentPercentage = 0;
-
-      ultimateX.classList.remove("flames");
-
-      var incrementPercentage = setInterval(function() {
-        currentPercentage += 1;
-        percentage.textContent = currentPercentage + "%";
-        
-        if (currentPercentage >= 100) {
-          clearInterval(incrementPercentage);
-          loadingText.style.display = "none";
-          
-          // Redirect to another website
-          setTimeout(function() {
-            window.location.href = "https://lavaxscripts.github.io/Text/Home.html";
-          }, 2000);
-        }
-      }, 50);
-    });
-  </script>
 </head>
 <body>
-  <div class="ultimate-x" id="ultimate-x">
+  <div class="ultimate-x">
+    <h2 class="introducing">Introducing</h2>
     <h1 class="ultimate">Ultimate <span class="flames">X</span></h1>
-    <p id="loading-text" class="loading">Loading...</p>
-    <p id="percentage" class="percentage">0%</p>
+    <button class="script-button">Script</button>
   </div>
 </body>
 </html>
